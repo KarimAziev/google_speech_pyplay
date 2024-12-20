@@ -35,9 +35,11 @@ jobs:
         black --check .
         isort --check-only .
 
-    - name: Run tests
+    - name: Run tests with unittest and measure coverage
       run: |
-        pytest --cov=google_speech_pyplay tests/
+        coverage run -m unittest discover
+        coverage xml
+        coverage report
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
