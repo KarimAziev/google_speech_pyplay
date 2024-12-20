@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # Temporarily suppress stdout for pygame initialization
 original_stdout = sys.stdout
 try:
-    sys.stdout = open(os.devnull, 'w')
+    sys.stdout = open(os.devnull, "w")
     import pygame
 finally:
     sys.stdout.close()

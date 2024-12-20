@@ -25,6 +25,9 @@ dependencies = [
 keywords = ["speech", "pygame", "audio", "synthesis", "voice", "google", "tts"]
 dynamic = ["version"]
 
+[tool.black]
+line-length = 88
+extend_exclude = 'google_speech_pyplay/version.py'
 [project.optional-dependencies]
 dev = [
   "black",

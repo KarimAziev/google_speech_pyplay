@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 class PreloaderThread(threading.Thread):
     """Thread to pre load (download and store in cache) audio data of a segment."""
 
-    def __init__(self, segments: List['SpeechSegment'] = [], *args, **kwargs):
+    def __init__(self, segments: List["SpeechSegment"] = [], *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.segments = segments
 
