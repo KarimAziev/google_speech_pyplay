@@ -17,6 +17,7 @@ from .config import SUPPORTED_LANGUAGES
 from .preloader_thread import PreloaderThread
 from .speech import Speech
 from .speech_segment import SpeechSegment
+from .version import version
 
 
 def cl_main():
@@ -62,6 +63,7 @@ def cl_main():
 
 
 __all__ = [
+    "version",
     "Speech",
     "SpeechSegment",
     "PreloaderThread",

@@ -70,4 +70,4 @@ jobs:
     - name: Verify Build
       run: |
         pip install dist/*.whl
-        python -c "import google_speech_pyplay; print(google_speech_pyplay.__version__)"
+        python -c "import google_speech_pyplay; print(google_speech_pyplay.version)"
