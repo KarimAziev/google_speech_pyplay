@@ -6,6 +6,9 @@ Key components:
 - `SpeechSegment`: Represents a segment of text-to-speech audio.
 - `PreloaderThread`: Preloads text-to-speech data for smoother playback.
 - `SUPPORTED_LANGUAGES`: A list of languages supported by the Google Translate TTS API.
+- `LANGUAGES_OPTIONS`: A list of dictionaries containing supported languages for
+  the Google Translate TTS API. Each dictionary includes a `value` (language
+  code, e.g., 'de') and a `label` (human-readable description, e.g., 'German').
 
 Usage:
     python -m google_speech_pyplay "Hello, world!" -l en
@@ -13,7 +16,7 @@ Usage:
 
 import argparse
 
-from .config import SUPPORTED_LANGUAGES
+from .config import LANGUAGES_OPTIONS, SUPPORTED_LANGUAGES
 from .preloader_thread import PreloaderThread
 from .speech import Speech
 from .speech_segment import SpeechSegment
@@ -68,6 +71,7 @@ __all__ = [
     "SpeechSegment",
     "PreloaderThread",
     "SUPPORTED_LANGUAGES",
+    "LANGUAGES_OPTIONS",
 ]
 
 
