@@ -72,15 +72,6 @@ jobs:
             fetch-depth: 0
             fetch-tags: true
             clean: true
-      - name: Check `.git` Directory
-        run: |
-          echo "Ensure the .git directory exists"
-          if [ ! -d ".git" ]; then
-            echo "::error::The .git directory is missing!"
-            exit 1
-          fi
-          git status
-          git log --oneline
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -92,7 +83,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install build setuptools
 
+      - name: Check `.git` Directory
+        run: |
+          echo "Ensure the .git directory exists"
+          if [ ! -d ".git" ]; then
+            echo "::error::The .git directory is missing!"
+            exit 1
+          fi
+          git status
+          git log --oneline
+
       - name: Build the package
+        env:
+          SETUPTOOLS_SCM_DEBUG: 1
         run: python -m build
 
       - name: Verify dist directory
