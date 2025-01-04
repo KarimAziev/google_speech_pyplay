@@ -1,3 +1,6 @@
+# app version
+/robot_hat/version.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
