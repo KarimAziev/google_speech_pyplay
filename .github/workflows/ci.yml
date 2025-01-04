@@ -68,7 +68,17 @@ jobs:
         uses: actions/checkout@v4
         with:
             fetch-depth: 0
+            fetch-tags: true
             clean: true
+      - name: Check `.git` Directory
+        run: |
+          echo "Ensure the .git directory exists"
+          if [ ! -d ".git" ]; then
+            echo "::error::The .git directory is missing!"
+            exit 1
+          fi
+          git status
+          git log --oneline
 
       - name: Set up Python
         uses: actions/setup-python@v5
