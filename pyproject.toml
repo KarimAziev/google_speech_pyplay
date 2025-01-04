@@ -32,4 +32,5 @@ extend_exclude = 'google_speech_pyplay/version.py'
 dev = [
   "black",
   "isort",
+  "pre-commit",
 ]
