@@ -8,10 +8,6 @@ A lightweight fork of the `google_speech` library, that replaces `sox` with `pyg
 
 > - [About](#about)
 >   - [Installation](#installation)
->     - [Install the Latest Version Directly from GitHub](#install-the-latest-version-directly-from-github)
->       - [Example: `requirements.txt`](#example-requirementstxt)
->     - [Install a Specific Tag (Versioned Release)](#install-a-specific-tag-versioned-release)
->       - [Example: `requirements.txt`](#example-requirementstxt-1)
 >   - [Usage](#usage)
 >     - [Command-Line Interface (CLI)](#command-line-interface-cli)
 >       - [Example: Save to File](#example-save-to-file)
@@ -29,40 +25,8 @@ A lightweight fork of the `google_speech` library, that replaces `sox` with `pyg
 
 ## Installation
 
-You can install the `google_speech_pyplay` library in multiple ways, depending on your needs.
-
-### Install the Latest Version Directly from GitHub
-
-If you want to get the latest development version of the library (from the **`main` branch**) directly from GitHub, use:
-
 ```bash
-pip install git+https://github.com/KarimAziev/google_speech_pyplay.git@main#egg=google_speech_pyplay
-```
-
-#### Example: `requirements.txt`
-
-Add this line to your `requirements.txt` to always install the latest version:
-
-```plaintext
-git+https://github.com/KarimAziev/google_speech_pyplay.git@main#egg=google_speech_pyplay
-```
-
----
-
-### Install a Specific Tag (Versioned Release)
-
-If you want to install a specific release version of the library (e.g., `v1.0.1`), you can reference that tag from GitHub:
-
-```bash
-pip install git+https://github.com/KarimAziev/google_speech_pyplay.git@v1.0.1#egg=google_speech_pyplay
-```
-
-#### Example: `requirements.txt`
-
-To lock the installation to a specific version (e.g., `v1.0.1`):
-
-```plaintext
-git+https://github.com/KarimAziev/google_speech_pyplay.git@v1.0.1#egg=google_speech_pyplay
+pip install google_speech_pyplay
 ```
 
 ## Usage
