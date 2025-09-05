@@ -138,9 +138,15 @@ class SpeechSegment:
         Play the audio for the segment using the Pygame library.
         """
         audio_data = self.get_audio_data()
-        logger.info("Playing speech segment (%s): '%s'" % (self.lang, self))
+        started = False
+        logger.info("Going to speak segment (%s): '%s'" % (self.lang, self))
 
-        pygame.mixer.init()
+        if not pygame.mixer.get_init():
+            try:
+                pygame.mixer.init()
+            except pygame.error as e:
+                logger.error("pygame.mixer.init failed: %s", e)
+                raise
 
         try:
             audio_file = io.BytesIO(audio_data)
@@ -148,11 +154,18 @@ class SpeechSegment:
 
             pygame.mixer.music.play()
 
+            started = True
+            logger.info("Playing speech segment (%s): '%s'" % (self.lang, self))
+
             while pygame.mixer.music.get_busy():
                 pygame.time.Clock().tick(10)
 
         finally:
-            pygame.mixer.quit()
+            if started:
+                try:
+                    pygame.mixer.music.stop()
+                except Exception:
+                    logger.exception("Failed to stop music in finally")
 
     def build_url(self) -> str:
         """
